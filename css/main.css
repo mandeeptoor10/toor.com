@@ -1,0 +1,443 @@
+header {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .logo a {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 30px;
+  }
+  
+  .menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .menu a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .menu a:hover {
+    color: #f36;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    header {
+      padding: 0 20px;
+    }
+    .menu {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-100%);
+      transition: all 0.3s ease;
+    }
+    .menu.active {
+      transform: translateY(0);
+    }
+    .menu li {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .hero {
+    background-image: url('pexels-quintin-gellar-313782.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero-container h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-container p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0062cc;
+  }
+  /* Style for profile section */
+  profile {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+  }
+  
+  .profile h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .profile p {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+/* Center the content */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+/* Style the team grid */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Style the team member cards */
+.team-member, .team-member2 {
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Add animations to the team member cards */
+.team-member, .team-member2 {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.team-member:hover, .team-member2:hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Style the team member images */
+.team-member img, .team-member2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-out;
+}
+
+.team-member:hover img, .team-member2:hover img {
+  transform: scale(1.1);
+}
+
+/* Style the team member info */
+.team-member h3, .team-member2 h3 {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.team-member p, .team-member2 p {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.team-member ul, .team-member2 ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.team-member li, .team-member2 li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Add media queries for responsive design */
+@media screen and (max-width: 767px) {
+  .team-member, .team-member2 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .team-grid {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .portfolio {
+    background-attachment: fixed;
+  }
+  
+  .team-grid {
+    justify-content: space-between;
+  }
+  
+  .team-member {
+    left: 0;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  
+  .team-member2 {
+    right: 0;
+    left: auto;
+    transform: translateX(50%);
+  }
+}
+
+.team-member, .contact {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.team-member {
+  animation-name: fade-in;
+  animation-delay: 0.5s;
+}
+
+.contact {
+  animation-name: slide-in;
+  animation-delay: 1s;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  margin-right: auto;
+}
+
+.footer-right ul {
+  list-style: none;
+  display: flex;
+}
+
+.footer-right li {
+  margin-left: 20px;
+}
+
+.footer-right a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #333;
+}
+
+
+/* Story section */
+.story {
+  background-color: #f9f9f9;
+  padding: 50px;
+}
+
+.story h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.story p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Values section */
+.values {
+  background-color: #fff;
+  padding: 50px;
+}
+
+.values h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.values li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.values li strong {
+  font-weight: bold;
+}
+
+.values ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.values ul li:before {
+  content: "•";
+  color: #ff9f00;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#message-panel {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
